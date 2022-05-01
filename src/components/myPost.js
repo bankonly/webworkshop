@@ -16,7 +16,7 @@ export default function MyPostComponent() {
         setLoading(true);
         try {
             const token = localStorage.getItem("token")
-            const data = await axios.get("https://paymartpayrich.com/staff-api/api/income/get_invoice?limit=10&page=1&summary=true", {
+            const data = await axios.get("http://134.209.103.131:3001/post/myPost", {
                 headers: {
                     Authorization: token,
                 },
@@ -43,7 +43,7 @@ export default function MyPostComponent() {
             formData.append("image", image);
 
             const token = localStorage.getItem("token");
-            const data = await axios.post("http://127.0.0.1:3001/post/createPost", formData, {
+            const data = await axios.post("http://134.209.103.131:3001/post/createPost", formData, {
                 headers: {
                     Authorization: token,
                 },
@@ -76,7 +76,7 @@ export default function MyPostComponent() {
             formData.append("image", image);
 
             const token = localStorage.getItem("token");
-            const data = await axios.put("http://127.0.0.1:3001/post/editPost/" + updateId, formData, {
+            const data = await axios.put("http://134.209.103.131:3001/post/editPost/" + updateId, formData, {
                 headers: {
                     Authorization: token,
                 },
@@ -95,7 +95,7 @@ export default function MyPostComponent() {
     async function onDelete(_id) {
         try {
             const token = localStorage.getItem("token");
-            const data = await axios.delete("http://127.0.0.1:3001/post/deletePost/" + _id, {
+            const data = await axios.delete("http://134.209.103.131:3001/post/deletePost/" + _id, {
                 headers: {
                     Authorization: token,
                 },

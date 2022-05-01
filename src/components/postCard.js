@@ -12,7 +12,7 @@ export default function PostCardComp({ like, image, desc, owner, _id, callback, 
                     </div>
                 </div>
                 <div className="post-desc">{desc}</div>
-                <img className="post-image" src={`http://localhost:3001/image/post/${image}`} />
+                <img className="post-image" src={`http://134.209.103.131:3001/image/post/${image}`} />
                 <div className="post-like">{like}</div>
             </div>
         </div>

@@ -17,7 +17,7 @@ export default function LoginComp() {
                 username: username,
                 password: password,
             };
-            const data = await axios.post("http://localhost:3001/user/login", formData);
+            const data = await axios.post("http://134.209.103.131:3001/user/login", formData);
             console.log(data.status);
             if (data.status === 200) {
                 localStorage.setItem("token", data.data);

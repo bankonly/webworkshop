@@ -24,7 +24,7 @@ function RegisterComp() {
         };
 
         try {
-            const data = await axios.post("http://localhost:3001/user/register", formBody);
+            const data = await axios.post("http://134.209.103.131:3001/user/register", formBody);
             if (data.status === 200) {
                 navigate("/login");
             }

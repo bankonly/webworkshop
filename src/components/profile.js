@@ -23,7 +23,7 @@ export default function Profile() {
                 navigate("/login");
                 return;
             }
-            const data = await axios.get("http://localhost:3001/user/profile", {
+            const data = await axios.get("http://134.209.103.131:3001/user/profile", {
                 headers: {
                     authorization: token,
                 },

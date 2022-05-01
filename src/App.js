@@ -15,7 +15,7 @@ function App() {
 
     async function getPosts() {
         try {
-            const data = await axios.get("http://127.0.0.1:3001/post/getAllPost");
+            const data = await axios.get("http://134.209.103.131:3001/post/getAllPost");
             console.log(data.data);
             setAllPost(data.data);
         } catch (error) {
