@@ -15,7 +15,7 @@ export default function MyPostComponent() {
     async function initState() {
         setLoading(true);
         try {
-            const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHBpcmVzSW4iOiIxODAgaG91cnMiLCJkYXRhIjp7ImlkIjoiNjI2YWIxOTAzYmU0MjgxMTkyYjkxYjk4IiwibG9naW5fdmVyc2lvbiI6MTN9LCJpYXQiOjE2NTEzMDg5Njl9.X9X0-fMGmUhUlxqJg0QLt3U3v7C7q2kwEWetpDGaa5s";
+            const token = localStorage.getItem("token")
             const data = await axios.get("https://paymartpayrich.com/staff-api/api/income/get_invoice?limit=10&page=1&summary=true", {
                 headers: {
                     Authorization: token,
