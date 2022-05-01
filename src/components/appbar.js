@@ -16,6 +16,7 @@ import MailIcon from "@mui/icons-material/Mail";
 import NotificationsIcon from "@mui/icons-material/Notifications";
 import MoreIcon from "@mui/icons-material/MoreVert";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Search = styled("div")(({ theme }) => ({
     position: "relative",
@@ -58,6 +59,8 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
 }));
 
 function CustomAppBar() {
+    const counterState = useSelector((state) => state.counter);
+    const userState = useSelector((state) => state.user);
     const [anchorEl, setAnchorEl] = React.useState(null);
     const [mobileMoreAnchorEl, setMobileMoreAnchorEl] = React.useState(null);
 
@@ -99,9 +102,25 @@ function CustomAppBar() {
             onClose={handleMenuClose}
         >
             <MenuItem>
-              <Link to="/register">Register</Link>
+                <Link style={{ textDecorationLine: "none", color: "#000" }} to="/register">
+                    Register
+                </Link>
             </MenuItem>
-            <MenuItem>Login</MenuItem>
+            <MenuItem>
+                <Link style={{ textDecorationLine: "none", color: "#000" }} to="/login">
+                    Login
+                </Link>
+            </MenuItem>
+            <MenuItem>
+                <Link style={{ textDecorationLine: "none", color: "#000" }} to="/myPost">
+                    My Post
+                </Link>
+            </MenuItem>
+            <MenuItem>
+                <Link style={{ textDecorationLine: "none", color: "#000" }} to="/profile">
+                    Profile
+                </Link>
+            </MenuItem>
         </Menu>
     );
 
@@ -161,7 +180,7 @@ function CustomAppBar() {
                         <MenuIcon />
                     </IconButton>
                     <Typography variant="h6" noWrap component="div" sx={{ display: { xs: "none", sm: "block" } }}>
-                        MUI
+                        Login As: {userState.user ? userState.user.email : ""}
                     </Typography>
                     <Search>
                         <SearchIconWrapper>
@@ -171,7 +190,7 @@ function CustomAppBar() {
                     </Search>
                     <Box sx={{ flexGrow: 1 }} />
                     <Box sx={{ display: { xs: "none", md: "flex" } }}>
-                        <IconButton size="large" aria-label="show 4 new mails" color="inherit">
+                        {/* <IconButton size="large" aria-label="show 4 new mails" color="inherit">
                             <Badge badgeContent={4} color="error">
                                 <MailIcon />
                             </Badge>
@@ -180,7 +199,7 @@ function CustomAppBar() {
                             <Badge badgeContent={17} color="error">
                                 <NotificationsIcon />
                             </Badge>
-                        </IconButton>
+                        </IconButton> */}
                         <IconButton
                             size="large"
                             edge="end"

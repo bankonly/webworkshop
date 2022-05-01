@@ -3,20 +3,24 @@ import axios from "axios";
 import "../css/profile.css";
 import { Button } from "@mui/material";
 import { useNavigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
+import { setProfile } from "../reducers/user";
 
 export default function Profile() {
+    const userState = useSelector((state) => state.user);
+    const dispatch = useDispatch();
+
     const navigate = useNavigate();
     const { useEffect, useState } = React;
 
-    const [user, setUser] = useState(null);
     const [isLoading, setIsLoading] = useState(true); // boolean
 
     async function getProfile() {
         try {
             setIsLoading(true);
             const token = localStorage.getItem("token");
-            if(!token){
-                navigate("/login")
+            if (!token) {
+                navigate("/login");
                 return;
             }
             const data = await axios.get("http://localhost:3001/user/profile", {
@@ -24,9 +28,8 @@ export default function Profile() {
                     authorization: token,
                 },
             });
-            setUser(data.data);
+            dispatch(setProfile(data.data));
             setIsLoading(false);
-            console.log(data.data);
         } catch (error) {
             console.log(error.message);
             setIsLoading(false);
@@ -49,10 +52,10 @@ export default function Profile() {
             ) : (
                 <div className="profile-cover">
                     <h3>Infomation</h3>
-                    <div className="form-display">Email Address: {user.email} </div>
-                    <div className="form-display">Username: {user.username} </div>
-                    <div className="form-display">First Name: {user.firstName} </div>
-                    <div className="form-display">Last Name: {user.lastName} </div>
+                    <div className="form-display">Email Address: {userState.user.email} </div>
+                    <div className="form-display">Username: {userState.user.username} </div>
+                    <div className="form-display">First Name: {userState.user.firstName} </div>
+                    <div className="form-display">Last Name: {userState.user.lastName} </div>
 
                     <Button onClick={onLogout}>Logout</Button>
                 </div>

@@ -34,7 +34,7 @@ function RegisterComp() {
     }
 
     return (
-        <div>
+        <div style={{ margin: "0 auto" }}>
             <Box
                 component="form"
                 sx={{

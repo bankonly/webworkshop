@@ -1,0 +1,57 @@
+.add-post-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 20px;
+    background-color: black;
+    color: white;
+    border-radius: 10px;
+    font-weight: bold;
+}
+
+.post-cover {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    top: 0;
+}
+.post-form {
+    width: 600px;
+    height: 0 auto;
+    margin: 0 auto;
+    background-color: white;
+    margin-top: 50px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    padding: 20px;
+}
+.post-form-desc {
+    height: 100px;
+    width: 100%;
+}
+.post-form-file {
+
+}
+
+.post-form-save-btn {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 35px;
+    background-color: black;
+    color: white;
+    font-weight: bold;
+}
+
+.post-form-cancel-btn {
+    margin-top: 10px;
+    padding: 10px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    width: 60px;
+    background-color: white;
+    color: black;
+    font-weight: bold;
+}

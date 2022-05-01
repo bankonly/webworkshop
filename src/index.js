@@ -8,17 +8,24 @@ import CustomAppBar from "./components/appbar";
 import RegisterComp from "./components/register";
 import LoginComp from "./components/login";
 import Profile from "./components/profile";
+import store from "./store";
+import { Provider } from "react-redux";
+import MyPostComponent from "./components/myPost";
+
 ReactDOM.render(
     <React.StrictMode>
-        <BrowserRouter>
-            <CustomAppBar />
-            <Routes>
-                <Route path="/" element={<App />} />
-                <Route path="/register" element={<RegisterComp />} />
-                <Route path="/login" element={<LoginComp />} />
-                <Route path="/profile" element={<Profile />} />
-            </Routes>
-        </BrowserRouter>
+        <Provider store={store}>
+            <BrowserRouter>
+                <CustomAppBar />
+                <Routes>
+                    <Route path="/" element={<App />} />
+                    <Route path="/register" element={<RegisterComp />} />
+                    <Route path="/login" element={<LoginComp />} />
+                    <Route path="/profile" element={<Profile />} />
+                    <Route path="/myPost" element={<MyPostComponent />} />
+                </Routes>
+            </BrowserRouter>
+        </Provider>
     </React.StrictMode>,
     document.getElementById("root")
 );

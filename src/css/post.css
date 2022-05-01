@@ -1,0 +1,35 @@
+.post-container {
+    width: 600px;
+    margin: 0 auto;
+    height: 400px;
+    background-color: white;
+    margin-top: 20px;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+.post-owner {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-inner {
+    padding: 20px;
+    text-align: justify;
+    float: left;
+}
+
+.post-like {
+    margin-top: 10px;
+}
+
+.post-desc {
+   margin-top: 10px;
+}
+
+.post-image {
+    margin-top: 10px;
+    width: 557px;
+    height: 270px;
+    object-fit: cover;
+}
